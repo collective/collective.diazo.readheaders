@@ -7,3 +7,4 @@ dist
 *.pyo
 *.egg-info
 .tox
+*.swp
