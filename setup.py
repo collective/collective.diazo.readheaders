@@ -32,6 +32,9 @@ setup(name='collective.diazo.readheaders',
       namespace_packages=['collective', 'collective.diazo'],
       include_package_data=True,
       zip_safe=False,
+      setup_requires=[
+          'setuptools-git',
+      ],
       install_requires=[
           'setuptools',
           'diazo[wsgi]',
