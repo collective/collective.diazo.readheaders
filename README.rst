@@ -41,6 +41,24 @@ or regex, headers, IP addresses, and more.  To achieve this, all you need to do
 is set the right HTTP header -- which is the path to your rules file -- and
 ensure this is sent to your middleware based upon your various conditions.
 
+Warning
+=======
+
+.. warning::
+
+   Since you are reading HTTP headers, the potential exists for headers to be
+   spoofed by a client. Without protection, such as ensuring you drop, sanitise
+   or otherwise confirm the validity of the incoming headers, you face
+   potential security issues. This package itself does little more than
+   configure settings, however since dependent packages will use these settings
+   without question, issues may result.
+   
+   Take *extreme* care when implementing this package and allowing Diazo to
+   read the network: not sanitising headers could easily allow someone to
+   have your process load their own rules via the web for processing.
+
+   You have been hereby warned.
+
 Example
 =======
 
